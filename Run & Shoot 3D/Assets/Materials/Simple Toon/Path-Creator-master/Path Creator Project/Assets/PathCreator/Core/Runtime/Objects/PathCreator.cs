@@ -9,10 +9,8 @@ namespace PathCreation {
 
         public event System.Action pathUpdated;
 
-        [SerializeField, HideInInspector]
-        PathCreatorData editorData;
-        [SerializeField, HideInInspector]
-        bool initialized;
+        [SerializeField, HideInInspector] PathCreatorData editorData;
+        [SerializeField, HideInInspector] bool initialized;
 
         GlobalDisplaySettings globalEditorDisplaySettings;
 

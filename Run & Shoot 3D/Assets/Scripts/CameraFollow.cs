@@ -2,7 +2,36 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+
+
+
+
     [SerializeField] private Transform followObject;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private float height;
+    private float horizontalDistance;
+
+    void Start()
+    {
+        height = transform.position.z;
+        horizontalDistance = transform.position.y;
+        offset = followObject.position - transform.position;
+    }
+
+    void LateUpdate()
+    {
+        transform.position = new Vector3(followObject.position.x - offset.x, horizontalDistance,followObject.position.z - offset.z);
+    }
+
+
+
+
+
+
+
+/*
+
+[SerializeField] private Transform followObject;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float height;
     private float horizontalDistance;
@@ -18,4 +47,6 @@ public class CameraFollow : MonoBehaviour
     {
         transform.position = new Vector3(followObject.position.x - offset.x, height, horizontalDistance);
     }
+
+*/
 }
